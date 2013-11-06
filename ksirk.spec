@@ -1,5 +1,5 @@
 Name:		ksirk
-Version:	4.11.2
+Version:	4.11.3
 Release:	1
 Epoch:		1
 Summary:	Computerized version of a well known strategy board game
@@ -63,6 +63,9 @@ rm -f %{buildroot}%{_kde_libdir}/libiris_ksirk.so
 
 
 %changelog
+* Wed Nov 06 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.3-1
+- New version 4.11.3
+
 * Wed Oct 02 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.2-1
 - New version 4.11.2
 
