@@ -1,6 +1,6 @@
 Name:		ksirk
 Version:	4.14.3
-Release:	1
+Release:	2
 Epoch:		1
 Summary:	Computerized version of a well known strategy board game
 Group:		Graphical desktop/KDE
