@@ -9,8 +9,7 @@ URL:		http://www.kde.org/applications/games/ksirk/
 Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libkdegames-devel
 BuildRequires:	pkgconfig(qca2)
-BuildRequires:	kdelibs-devel
-BuildRequires:	cmake(KDEGames)
+
 
 %description -n ksirk
 KsirK is a computerized version of the well known strategic board game Risk.
