@@ -9,7 +9,7 @@ URL:		http://www.kde.org/applications/games/ksirk/
 Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libkdegames-devel
 BuildRequires:	pkgconfig(qca2)
-BuildRequires:	kdelibs-level
+BuildRequires:	kdelibs-devel
 BuildRequires:	cmake(KDEGames)
 
 %description -n ksirk
