@@ -1,6 +1,6 @@
 Name:		ksirk
-Version:	15.08.0
-Release:	2
+Version:	15.08.1
+Release:	1
 Epoch:		1
 Summary:	Computerized version of a well known strategy board game
 Group:		Graphical desktop/KDE
