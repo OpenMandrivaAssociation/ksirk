@@ -1,6 +1,6 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		ksirk
-Version:	17.04.2
+Version:	17.08.3
 Release:	1
 Epoch:		1
 Summary:	Computerized version of a well known strategy board game
@@ -16,22 +16,23 @@ BuildRequires:	pkgconfig(qca2)
 
 %description -n ksirk
 KsirK is a computerized version of the well known strategic board game Risk.
-The goal of the game is simply to conquer the world by attacking your neighbors 
+The goal of the game is simply to conquer the world by attacking your neighbors
 with your armies.
-Features :
+Features:
 - Support for 1-6 human or computer (AI) players
 - Multi-player gaming over a network
 - You can easily create new skins with SVG graphics and the skin editor
 - Hot New Stuff support. You can easily download and install new skins
 
 %files
-%{_bindir}/ksirk*                                                                                      
-%{_datadir}/applications/kde4/ksirk*.desktop                                                           
-%{_datadir}/config.kcfg/ksirk*settings.kcfg                                                            
-%{_datadir}/config/ksirk.knsrc                                                                         
-%{_datadir}/apps/ksirk*                                                                                
-%{_iconsdir}/*/*/apps/ksirk.png                                                                        
-%doc %{_docdir}/*/*/ksirk                                                                              
+%{_bindir}/ksirk*
+%{_datadir}/applications/kde4/org.kde.ksirk*.desktop
+%{_datadir}/metainfo/org.kde.ksirk.appdata.xml
+%{_datadir}/config.kcfg/ksirk*settings.kcfg
+%{_datadir}/config/ksirk.knsrc
+%{_datadir}/apps/ksirk*
+%{_iconsdir}/*/*/apps/ksirk.png
+%doc %{_docdir}/*/*/ksirk
 %doc %{_docdir}/*/*/ksirkskineditor
 
 #------------------------------------------------------------------------------
