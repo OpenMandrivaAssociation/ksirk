@@ -1,6 +1,6 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		ksirk
-Version:	17.08.3
+Version:	17.11.90
 Release:	1
 Epoch:		1
 Summary:	Computerized version of a well known strategy board game
@@ -8,10 +8,12 @@ Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		http://www.kde.org/applications/games/ksirk/
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	libkdegames-devel
-BuildRequires:	kdelibs-devel
+Source100:	%{name}.rpmlintrc
+BuildRequires:	cmake cmake(ECM) ninja
 BuildRequires:	cmake(KDEGames)
 BuildRequires:	pkgconfig(qca2)
+%define libiris_ksirk %mklibname iris_ksirk 2
+Obsoletes:	%{libiris_ksirk} < %{EVRD}
 
 
 %description -n ksirk
@@ -24,31 +26,20 @@ Features:
 - You can easily create new skins with SVG graphics and the skin editor
 - Hot New Stuff support. You can easily download and install new skins
 
-%files
+%files -f %{name}.lang
 %{_bindir}/ksirk*
-%{_datadir}/applications/kde4/org.kde.ksirk*.desktop
+%{_datadir}/applications/org.kde.ksirk*.desktop
 %{_datadir}/metainfo/org.kde.ksirk.appdata.xml
 %{_datadir}/config.kcfg/ksirk*settings.kcfg
-%{_datadir}/config/ksirk.knsrc
-%{_datadir}/apps/ksirk*
-%{_iconsdir}/*/*/apps/ksirk.png
-%doc %{_docdir}/*/*/ksirk
-%doc %{_docdir}/*/*/ksirkskineditor
-
-#------------------------------------------------------------------------------
-
-%define iris_ksirk_major 2
-%define libiris_ksirk %mklibname iris_ksirk %{iris_ksirk_major}
-
-%package -n %{libiris_ksirk}
-Summary:	KDE 4 library
-Group:		System/Libraries
-
-%description -n %{libiris_ksirk}
-KDE 4 library.
-
-%files -n %{libiris_ksirk}
-%{_libdir}/libiris_ksirk.so.%{iris_ksirk_major}*
+%{_datadir}/ksirk
+%{_datadir}/ksirkskineditor
+%{_iconsdir}/*/*/apps/ksirk.*
+%{_datadir}/kxmlgui5/ksirk
+%{_datadir}/kxmlgui5/ksirkskineditor
+%{_sysconfdir}/xdg/ksirk.knsrc
+# No separate libpackage for a private
+# library that can't be used by anything else
+%{_libdir}/libiris_ksirk.so*
 
 #------------------------------------------------------------------------------
 
@@ -56,13 +47,13 @@ KDE 4 library.
 %setup -q
 
 %build
-%cmake_kde4 \
-	-DCMAKE_MINIMUM_REQUIRED_VERSION=3.1
-%make
+%cmake_kde5 
+%ninja
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
 # We don't need it for now
 rm -f %{buildroot}%{_libdir}/libiris_ksirk.so
 
+%find_lang %{name} --all-name --with-html
