@@ -10,8 +10,27 @@ URL:		http://www.kde.org/applications/games/ksirk/
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source100:	%{name}.rpmlintrc
 BuildRequires:	cmake cmake(ECM) ninja
-BuildRequires:	cmake(KDEGames)
-BuildRequires:	pkgconfig(qca2)
+BuildRequires:	cmake(KF5KDEGames)
+BuildRequires:  cmake(KF5Completion)
+BuildRequires:  cmake(KF5Config)
+BuildRequires:  cmake(KF5ConfigWidgets)
+BuildRequires:  cmake(KF5CoreAddons)
+BuildRequires:  cmake(KF5Crash)
+BuildRequires:  cmake(KF5DocTools)
+BuildRequires:  cmake(KF5I18n)
+BuildRequires:  cmake(KF5IconThemes)
+BuildRequires:  cmake(KF5KIO)
+BuildRequires:  cmake(KF5NewStuff)
+BuildRequires:  cmake(KF5Wallet)
+BuildRequires:  cmake(KF5WidgetsAddons)
+BuildRequires:  cmake(KF5XmlGui)
+BuildRequires:	cmake(Phonon4Qt5)
+BuildRequires:	pkgconfig(qca2-qt5)
+BuildRequires:	pkgconfig(Qt5Widgets)
+BuildRequires:	pkgconfig(Qt5Svg)
+BuildRequires:	pkgconfig(Qt5Test)
+BuildRequires:	pkgconfig(Qt5)
+
 %define libiris_ksirk %mklibname iris_ksirk 2
 Obsoletes:	%{libiris_ksirk} < %{EVRD}
 
