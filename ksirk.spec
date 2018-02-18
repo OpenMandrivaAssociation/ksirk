@@ -29,7 +29,7 @@ BuildRequires:	pkgconfig(qca2-qt5)
 BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5Svg)
 BuildRequires:	pkgconfig(Qt5Test)
-BuildRequires:	pkgconfig(Qt5)
+BuildRequires:	pkgconfig(Qt5Core)
 
 %define libiris_ksirk %mklibname iris_ksirk 2
 Obsoletes:	%{libiris_ksirk} < %{EVRD}
