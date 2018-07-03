@@ -19,6 +19,7 @@ BuildRequires:  cmake(KF5Crash)
 BuildRequires:  cmake(KF5DocTools)
 BuildRequires:  cmake(KF5I18n)
 BuildRequires:  cmake(KF5IconThemes)
+BuildRequires:	cmake(KF5KDEGames)
 BuildRequires:  cmake(KF5KIO)
 BuildRequires:  cmake(KF5NewStuff)
 BuildRequires:  cmake(KF5Wallet)
@@ -30,6 +31,7 @@ BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5Svg)
 BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5Core)
+BuildRequires:	pkgconfig(zlib)
 
 %define libiris_ksirk %mklibname iris_ksirk 2
 Obsoletes:	%{libiris_ksirk} < %{EVRD}
