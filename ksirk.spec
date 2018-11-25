@@ -1,6 +1,6 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		ksirk
-Version:	 18.08.3
+Version:	 18.11.80
 Release:	1
 Epoch:		1
 Summary:	Computerized version of a well known strategy board game
@@ -48,6 +48,7 @@ Features:
 - Hot New Stuff support. You can easily download and install new skins
 
 %files -f %{name}.lang
+%{_sysconfdir}/xdg/ksirk.categories
 %{_bindir}/ksirk*
 %{_datadir}/applications/org.kde.ksirk*.desktop
 %{_datadir}/metainfo/org.kde.ksirk.appdata.xml
