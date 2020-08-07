@@ -1,6 +1,6 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		ksirk
-Version:	20.07.90
+Version:	20.08.0
 Release:	1
 Epoch:		1
 Summary:	Computerized version of a well known strategy board game
