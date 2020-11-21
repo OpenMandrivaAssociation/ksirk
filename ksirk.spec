@@ -1,6 +1,6 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		ksirk
-Version:	20.08.3
+Version:	20.11.80
 Release:	1
 Epoch:		1
 Summary:	Computerized version of a well known strategy board game
@@ -58,7 +58,7 @@ Features:
 %{_iconsdir}/*/*/apps/ksirk.*
 %{_datadir}/kxmlgui5/ksirk
 %{_datadir}/kxmlgui5/ksirkskineditor
-%{_sysconfdir}/xdg/ksirk.knsrc
+%{_datadir}/knsrcfiles/ksirk.knsrc
 # No separate libpackage for a private
 # library that can't be used by anything else
 %{_libdir}/libiris_ksirk.so*
