@@ -24,6 +24,9 @@ BuildRequires:  cmake(KF6WidgetsAddons)
 BuildRequires:  cmake(KF6XmlGui)
 BuildRequires:	cmake(Phonon4Qt6)
 BuildRequires:	cmake(Qca-qt6)
+BuildRequires:  cmake(Qt6Qml)
+BuildRequires:  cmake(Qt6QmlCore)
+BuildRequires:  cmake(Qt6QmlNetwork)
 BuildRequires:	cmake(Qt6Multimedia)
 BuildRequires:	pkgconfig(Qt6Widgets)
 BuildRequires:	pkgconfig(Qt6Svg)
@@ -31,6 +34,7 @@ BuildRequires:	cmake(Qt6SvgWidgets)
 BuildRequires:	pkgconfig(Qt6Test)
 BuildRequires:	pkgconfig(Qt6Core)
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:  qt6-qtbase-theme-gtk3
 
 %define libiris_ksirk %mklibname iris_ksirk 2
 Obsoletes:	%{libiris_ksirk} < %{EVRD}
