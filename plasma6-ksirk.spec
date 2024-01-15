@@ -35,6 +35,7 @@ BuildRequires:	pkgconfig(Qt6Test)
 BuildRequires:	pkgconfig(Qt6Core)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:  qt6-qtbase-theme-gtk3
+BuildRequires:  qt6-qtmultimedia-gstreamer
 
 %define libiris_ksirk %mklibname iris_ksirk 2
 Obsoletes:	%{libiris_ksirk} < %{EVRD}
