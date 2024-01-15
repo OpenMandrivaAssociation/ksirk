@@ -1,13 +1,12 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		plasma6-ksirk
 Version:	24.01.90
-Release:	2
+Release:	1
 Summary:	Computerized version of a well known strategy board game
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		http://www.kde.org/applications/games/ksirk/
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/ksirk-%{version}.tar.xz
-Source100:	%{name}.rpmlintrc
 BuildRequires:	cmake cmake(ECM) ninja
 BuildRequires:  cmake(KF6Completion)
 BuildRequires:  cmake(KF6Config)
@@ -64,6 +63,7 @@ Features:
 %build
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
+ 	-DBUILD_WITH_QT6:BOOL=ON \
 	-G Ninja 
 %ninja
 
