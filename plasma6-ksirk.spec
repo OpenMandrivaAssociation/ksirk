@@ -1,12 +1,19 @@
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		plasma6-ksirk
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 Summary:	Computerized version of a well known strategy board game
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		http://www.kde.org/applications/games/ksirk/
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/games/ksirk/-/archive/%{gitbranch}/ksirk-%{gitbranchd}.tar.bz2#/ksirk-%{git}.tar.bz2
+%else
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/ksirk-%{version}.tar.xz
+%endif
 BuildRequires:	cmake cmake(ECM) ninja
 BuildRequires:  cmake(KF6Completion)
 BuildRequires:  cmake(KF6Config)
@@ -65,7 +72,7 @@ Features:
 #------------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n ksirk-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n ksirk-%{?git:%{gitbranchd}}%{!?git:%{version}}
 
 %build
 %cmake \
