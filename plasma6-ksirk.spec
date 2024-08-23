@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		plasma6-ksirk
-Version:	24.05.2
+Version:	24.08.0
 Release:	%{?git:0.%{git}.}1
 Summary:	Computerized version of a well known strategy board game
 Group:		Graphical desktop/KDE
@@ -59,6 +59,7 @@ Features:
 - Hot New Stuff support. You can easily download and install new skins
 
 %files -f %{name}.lang
+%{_datadir}/qlogging-categories6/ksirk.renamecategories
 %{_datadir}/qlogging-categories6/ksirk.categories
 %{_bindir}/ksirk*
 %{_datadir}/applications/org.kde.ksirk*.desktop
