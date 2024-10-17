@@ -6,7 +6,7 @@ Epoch:		1
 Summary:	Computerized version of a well known strategy board game
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
-URL:		http://www.kde.org/applications/games/ksirk/
+URL:		https://www.kde.org/applications/games/ksirk/
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source100:	%{name}.rpmlintrc
 BuildRequires:	cmake cmake(ECM) ninja
