@@ -8,7 +8,7 @@ Release:	%{?git:0.%{git}.}1
 Summary:	Computerized version of a well known strategy board game
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
-URL:		http://www.kde.org/applications/games/ksirk/
+URL:		https://www.kde.org/applications/games/ksirk/
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/games/ksirk/-/archive/%{gitbranch}/ksirk-%{gitbranchd}.tar.bz2#/ksirk-%{git}.tar.bz2
 %else
