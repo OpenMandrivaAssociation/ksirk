@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		ksirk
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Summary:	Computerized version of a well known strategy board game
 Group:		Graphical desktop/KDE
@@ -47,6 +47,10 @@ BuildRequires:  qt6-qtmultimedia-gstreamer
 %define libiris_ksirk %mklibname iris_ksirk 2
 Obsoletes:	%{libiris_ksirk} < %{EVRD}
 
+%rename plasma6-ksirk
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 KsirK is a computerized version of the well known strategic board game Risk.
@@ -69,23 +73,3 @@ Features:
 %{_datadir}/ksirkskineditor
 %{_iconsdir}/*/*/apps/ksirk.*
 %{_datadir}/knsrcfiles/ksirk.knsrc
-
-#------------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n ksirk-%{?git:%{gitbranchd}}%{!?git:%{version}}
-
-%build
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
- 	-DBUILD_WITH_QT6:BOOL=ON \
-	-G Ninja 
-%ninja
-
-%install
-%ninja_install -C build
-
-# We don't need it for now
-rm -f %{buildroot}%{_libdir}/libiris_ksirk.so
-
-%find_lang %{name} --all-name --with-html
